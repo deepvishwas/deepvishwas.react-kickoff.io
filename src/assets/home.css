@@ -1,0 +1,44 @@
+body {
+  height: 100vh;
+  color: white;
+
+  background: #03122e;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #02172e, #0d1525);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #02172e, #0d1525);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+i {
+  width: 1em;
+  height: 1em;
+}
+
+.hide {
+    display:none;
+}
+
+.navbar{
+    color: #03122e;
+}
+
+.navbar h3,
+.navbar i {
+    color: #03122e;
+}
+
+.navbar h3{
+    display: inline
+}
+
+.nav-link{
+    color: #03122e !important;
+
+}
+
+.add-to-list {
+    width:100%;
+    justify-content: center;
+    background-color: rgba(220, 234, 250, 0.98);
+}

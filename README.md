@@ -68,3 +68,31 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## The Movie Database API 
+
+TMDb offers a powerful API service that is free to use as long as you properly attribute us as the source of the data and/or images you use. You can find the logos for attribution here.
+
+Documentation
+Our primary documentation is located at developers.themoviedb.org.
+
+Support
+If you have questions or comments about the information covered here, please create a post on our support forums.
+
+API Details
+If you'd like to edit the details of your app, click here.
+
+App Directory
+Once you have completed your application, add it to the app directory!
+
+API Key (v3 auth)
+71b79b7219d155c0189a83511742186d
+Example API Request
+https://api.themoviedb.org/3/movie/550?api_key=71b79b7219d155c0189a83511742186d
+API Read Access Token (v4 auth)
+eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MWI3OWI3MjE5ZDE1NWMwMTg5YTgzNTExNzQyMTg2ZCIsInN1YiI6IjYwYjI2MzQwNmRlYTNhMDAyYTVkY2YzOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ithlFyfkjcD9wLl807GyV4oQaWCe4BA8sJjYDFHtqww
+
+Search Example
+
+https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher
