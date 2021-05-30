@@ -18,7 +18,7 @@ export default function Movie({ movie, toggleStatus }) {
           onChange={onChange}
           checked={movie.status}
         />
-        <label className="form-check-label" for="flexSwitchCheckChecked">
+        <label className="form-check-label">
           {movie.name}
         </label>
       </div>
