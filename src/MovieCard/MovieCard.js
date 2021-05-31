@@ -1,4 +1,4 @@
-import { React, useRef } from "react";
+import { React } from "react";
 
 export default function MovieCard({ movieDetails, addMovie }) {
   function addToWatchList(movie) {
@@ -17,15 +17,15 @@ export default function MovieCard({ movieDetails, addMovie }) {
         <div className="card-body">
           {/* <p className="card-text">{movieDetails.overview}</p> */}
         </div>
-        <div class="card-footer ">
+        <div className="card-footer ">
           <h5 className="card-title"> {movieDetails.original_title}</h5>
           <div className="row">
             <div className="col-sm-6">
               <button
-                className="btn btn-sm btn-outline-success m-2"
+                className="btn btn-sm btn-outline-success border-0 m-2"
                 onClick={addToWatchList}
               >
-                Add
+                <i class="bi bi-check-circle"></i>
               </button>
             </div>
             <div className="col-sm-6">

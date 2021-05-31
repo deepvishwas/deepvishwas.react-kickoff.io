@@ -1,6 +1,6 @@
 export default function TmdbSearchData() {
   return ({
-    "results" : [
+    results : [
     {
       adult: false,
       backdrop_path: "/k7h4RNAarfOrF2r2YMN0P2FQSr4.jpg",

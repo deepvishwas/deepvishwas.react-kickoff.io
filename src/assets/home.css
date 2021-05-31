@@ -11,7 +11,7 @@ body {
 }
 
 .lead {
-    color: white;
+  color: white;
 }
 i {
   width: 1em;
@@ -19,51 +19,59 @@ i {
 }
 
 .hide {
-    display:none;
+  display: none;
 }
 
-.navbar{
-    color: #03122e;
+.navbar {
+  color: #03122e;
 }
 
 .navbar h3,
 .navbar i {
-    color: #03122e;
+  color: #03122e;
 }
 
-.navbar h3{
-    display: inline
+.navbar h3 {
+  display: inline;
 }
 
-.nav-link{
-    color: #03122e !important;
-
+.nav-link {
+  color: #03122e !important;
 }
 
 .add-to-list {
-    width:100%;
-    justify-content: center;
-    background-color: rgba(220, 234, 250, 0.98);
+  width: 100%;
+  justify-content: center;
+  background-color: rgba(220, 234, 250, 0.98);
 }
 
 /* Movie Search Result */
 .search-movie-card {
-    position: relative;
-    max-height: 380px;
-    height:auto;
+  position: relative;
+  max-height: 350px;
+  height: auto;
+  overflow-y: hidden;
 }
 
 .search-movie-card .card-text {
-    height: 80px;
-    overflow-y: scroll;
+  height: 80px;
+  overflow-y: scroll;
 }
 
-
 .search-movie-card .card-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right:0;
-    color:rgba(220, 234, 250, 0.98);
-    background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: rgba(220, 234, 250, 0.98);
+  background-color: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+}
+
+.search-movie-card:hover .card-footer {
+  visibility: visible;
+}
+
+.search-movie-card .card-footer .btn {
+  border-radius: 50%;
 }

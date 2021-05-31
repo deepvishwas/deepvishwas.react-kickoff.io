@@ -1,5 +1,6 @@
 export default function dataSet() {
-  return [
+  return {
+    results: [
     {
       adult: false,
       backdrop_path: "/k7h4RNAarfOrF2r2YMN0P2FQSr4.jpg",
@@ -33,6 +34,6 @@ export default function dataSet() {
       video: false,
       vote_average: 5.8,
       vote_count: 3594,
-    },
-  ];
+    }]
+  }
 }

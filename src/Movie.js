@@ -1,10 +1,15 @@
-import { React, useRef } from "react";
+import React, {useEffect} from "react"
 
 export default function Movie({ movie, toggleStatus }) {
-  const movieStatusRef = useRef(false);
-  
+ 
+  useEffect(() => {
+    if(!movie.status){
+      movie.status = false
+    }
+  })
+
   function onChange(e) {
-    toggleStatus(movie.id);
+    toggleStatus(movie.id)
   }
 
   return (
@@ -12,8 +17,6 @@ export default function Movie({ movie, toggleStatus }) {
       <div className="form-check form-switch">
         <input
           className="form-check-input"
-          type="checkbox"
-          ref={movieStatusRef}
           type="checkbox"
           onChange={onChange}
           checked={movie.status}
@@ -23,5 +26,5 @@ export default function Movie({ movie, toggleStatus }) {
         </label>
       </div>
     </div>
-  );
+  )
 }
