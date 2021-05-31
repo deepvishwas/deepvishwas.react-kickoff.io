@@ -19,7 +19,7 @@ export default function Movie({ movie, toggleStatus }) {
           checked={movie.status}
         />
         <label className="form-check-label">
-          {movie.name}
+          {movie.original_title}
         </label>
       </div>
     </div>

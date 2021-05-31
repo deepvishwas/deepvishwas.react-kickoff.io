@@ -1,8 +1,10 @@
+import React from "react";
 import { useState, useRef, useEffect } from "react";
 import TmdbSearchData from "../Data/TmdbSearchData";
 import { pipe, observable } from "rxjs";
+import MovieCards from "../MovieCard/MovieCards";
 
-export default function Search({ searchMovies }) {
+export default function Search({ searchMovies, addMovie }) {
   const [tmdbMovies, setTmdbMovies] = useState(TmdbSearchData);
   const searchBoxRef = useRef();
   const [searchTerm, setSearchTerm] = useState("Jack");
@@ -20,6 +22,12 @@ export default function Search({ searchMovies }) {
       });
   }, [searchTerm]);
 
+  // useEffect(() => {
+  //   tmdbMovies.movie_results.map((item)=>{
+  //     return (<MovieCard movieDeails={item}/>)
+  //   })
+  // }, [tmdbMovies])
+
   function getMovieUrl(e) {
     const search = searchBoxRef.current.value;
     if (search === "") return;
@@ -29,15 +37,21 @@ export default function Search({ searchMovies }) {
 
   return (
     <div className="container">
-      <div className="col-sm-12">
-        <input type="text" ref={searchBoxRef} />
-        <button className="btn btn-primary" onClick={getMovieUrl}>
-          Search
-        </button>
+      <div className="row">
+        <div className="col-sm-12 m-2 p-2">
+          <input type="text" ref={searchBoxRef} />
+          <button className="btn btn-primary m-2 p-2" onClick={getMovieUrl}>
+            Search
+          </button>
+        </div>
+
+        <div className="col-sm-12">
+          <pre>{JSON.stringify(tmdbMovies)}</pre>
+        </div>
       </div>
 
-      <div className="col-sm-12">
-        <pre>{JSON.stringify(tmdbMovies)}</pre>
+      <div className="row g-4">
+        <MovieCards listOfMovies={tmdbMovies}  addMovie={addMovie}/>
       </div>
     </div>
   );
