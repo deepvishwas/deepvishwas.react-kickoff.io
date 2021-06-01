@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react"
 import TmdbSearchData from "../Data/TmdbSearchData"
 import MovieCards from "../MovieCard/MovieCards"
 
-export default function Search({ addMovie }) {
+export default function Search({ addMovie, watchList }) {
   const [tmdbMovies, setTmdbMovies] = useState(TmdbSearchData)
   const searchBoxRef = useRef()
   const [searchTerm, setSearchTerm] = useState("")
@@ -47,7 +47,7 @@ export default function Search({ addMovie }) {
               type="button"
               id="movie-search"
             >
-              <i class="bi bi-search"></i>
+              <i className="bi bi-search"></i>
             </button>
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function Search({ addMovie }) {
       </div>
 
       <div className="row g-4">
-        <MovieCards listOfMovies={tmdbMovies} addMovie={addMovie} />
+        <MovieCards listOfMovies={tmdbMovies} addMovie={addMovie} watchList={watchList}/>
       </div>
     </div>
   )

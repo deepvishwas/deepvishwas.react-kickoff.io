@@ -51,11 +51,14 @@ i {
   max-height: 350px;
   height: auto;
   overflow-y: hidden;
+  background-color: #03182d;
+  background-clip: border-box;
+  border: 1px solid rgb(243 238 238 / 13%);
 }
 
-.search-movie-card .card-text {
-  height: 80px;
-  overflow-y: scroll;
+.search-movie-card .card-footer .card-name {
+    display: inline;
+    font-weight: 300;
 }
 
 .search-movie-card .card-footer {
@@ -66,7 +69,11 @@ i {
   color: rgba(220, 234, 250, 0.98);
   background-color: rgba(0, 0, 0, 0.8);
   visibility: hidden;
+  border-top: 1px solid white;
+  border-color: rgba(255,255,255,0.3);
 }
+
+
 
 .search-movie-card:hover .card-footer {
   visibility: visible;
@@ -74,4 +81,10 @@ i {
 
 .search-movie-card .card-footer .btn {
   border-radius: 50%;
+}
+
+.toast-success {
+  background-color: #5cb85c;
+  opacity: 0.9 !important;
+  box-shadow: none !important;
 }

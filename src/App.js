@@ -1,33 +1,60 @@
-import React, { useState } from "react"
-import dataSet from "./Data/DataSet"
-import MovieList from "./MovieList"
-import Search from "./SearchComponent/Search"
+import React, { useState } from "react";
+import dataSet from "./Data/DataSet";
+import MovieList from "./MovieList";
+import Search from "./SearchComponent/Search";
+import toastr from 'toastr'
+import 'toastr/build/toastr.css'
 
 function App() {
-  const [watchList, setWatchList] = useState(dataSet)
+
+  toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "150",
+    "hideDuration": "500",
+    "timeOut": "1500",
+    "extendedTimeOut": "100",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut",
+  }
+
+
+  const [watchList, setWatchList] = useState(dataSet);
 
   function toggleStatus(id) {
-    let newWatchList = { results: [] }
-    newWatchList.results = [...watchList.results]
-    const newMovie = newWatchList.results.find((m) => m.id === id)
-    newMovie.status = !newMovie.status
-    setWatchList(newWatchList)
+    let newWatchList = { results: [] };
+    newWatchList.results = [...watchList.results];
+    const newMovie = newWatchList.results.find((m) => m.id === id);
+    newMovie.status = !newMovie.status;
+    setWatchList(newWatchList);
+  }
+
+  function isListed(movie) {
+    if (watchList.results.find((m) => m.id === movie.id)) {
+      return true;
+    }
+    return false;
   }
 
   function addMovie(movie) {
-    try {
-      // to be converted into types or API contracts
-      const newWatcherList = { results: [] }
+    if (!isListed(movie)) {
+      const newWatcherList = { results: [] };
       newWatcherList.results = [
         ...watchList.results,
         {
           ...movie,
           status: false,
         },
-      ]
-      setWatchList(newWatcherList)
-    } catch (error) {
-      console.log("oopsi doopsi")
+      ];
+      setWatchList(newWatcherList);
+      toastr.success(movie.name + "has been added to your Watch List")
     }
   }
 
@@ -69,9 +96,8 @@ function App() {
 
       <div className="container-fluid g-5">
         <div className="row flex-lg-row justify-content-center mt-5 pt-5">
-          
           <div className="col-sm-8 align-items-center">
-            <Search addMovie={addMovie} />
+            <Search addMovie={addMovie} watchList={watchList}/>
           </div>
           <div className="col-sm-3 align-items-center">
             <MovieList watchList={watchList} toggleStatus={toggleStatus} />
@@ -79,7 +105,7 @@ function App() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
