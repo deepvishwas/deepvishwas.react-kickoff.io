@@ -23,7 +23,13 @@ i {
 }
 
 .navbar {
+  background-color: rgba(0, 0, 0, 0.8) !important;
   color: #03122e;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
 }
 
 .navbar h3,
@@ -33,6 +39,16 @@ i {
 
 .navbar h3 {
   display: inline;
+  color: yellow;
+  font-size:2rem !important;
+}
+
+.navbar-brand svg {
+  width:4rem;
+  height:4rem;
+  color: yellow;
+  margin-left:1rem;
+  margin-right:0.3rem;
 }
 
 .nav-link {
@@ -57,8 +73,8 @@ i {
 }
 
 .search-movie-card .card-footer .card-name {
-    display: inline;
-    font-weight: 300;
+  display: inline;
+  font-weight: 300;
 }
 
 .search-movie-card .card-footer {
@@ -70,10 +86,8 @@ i {
   background-color: rgba(0, 0, 0, 0.8);
   visibility: hidden;
   border-top: 1px solid white;
-  border-color: rgba(255,255,255,0.3);
+  border-color: rgba(255, 255, 255, 0.3);
 }
-
-
 
 .search-movie-card:hover .card-footer {
   visibility: visible;
@@ -87,4 +101,26 @@ i {
   background-color: #5cb85c;
   opacity: 0.9 !important;
   box-shadow: none !important;
+}
+
+#search-movies {
+  background: transparent;
+  border: 1px solid grey;
+  border-radius: 11px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+#search-movies-btn {
+  background: transparent;
+  border: 1px solid grey;
+  border-radius: 11px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: white;
 }
