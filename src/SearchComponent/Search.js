@@ -29,7 +29,7 @@ export default function Search({ addMovie, watchList }) {
   }
 
   return (
-    <div className="container">
+    <div className="container pb-5">
       <div className="row">
         <div className="col-sm-10 m-2 p-2">
           <div className="input-group mb-3">

@@ -62,7 +62,7 @@ function App() {
     let worker = html2pdf().from(ele).save();
   }
   return (
-    <div>
+    <div className="mb-5">
       <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
@@ -84,7 +84,7 @@ function App() {
         </div>
       </nav>
 
-      <div className="container-fluid g-5">
+      <div className="container-fluid g-5 mb-5">
         <div className="row flex-lg-row justify-content-center mt-5 pt-5">
           <div className="col-sm-8 align-items-center">
             <Search addMovie={addMovie} watchList={watchList} />
